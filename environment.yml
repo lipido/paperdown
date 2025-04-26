@@ -1,0 +1,8 @@
+name: paperdown
+channels:
+  - conda-forge
+dependencies:
+  - pandoc=3.6.2  
+  - pandoc-crossref=0.3.18.1
+  - tectonic
+  - make

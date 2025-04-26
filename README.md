@@ -2,7 +2,7 @@
 
 ## Overview
 
-Paperdown is a project designed to simplify the process of writing academic papers using Markdown. It leverages Pandoc to convert Markdown files into high-quality PDFs, while supporting advanced features such as cross-references, automatic numbering, and bibliography generation. This approach allows researchers to focus on content creation without worrying about formatting.
+Paperdown is a project designed to simplify the process of writing academic papers using Markdown. It leverages Pandoc to convert Markdown files into high-quality PDFs and DOCX documents, while supporting advanced features such as cross-references, automatic numbering, and bibliography generation. This approach allows researchers to focus on content creation without worrying about formatting.
 
 ## Features
 
@@ -36,16 +36,18 @@ Ensure you have the following installed:
    conda activate paperdown
    ```
 
-### Generating the PDF
+### Generating the PDF and DOCX
 
 1. Write your paper in `paper.md`.
 
-2. Use `make` to generate the PDF:
+2. Use `make` to generate the PDF and DOCX:
    ```bash
    make
    ```
 
-   This will use Pandoc to convert `paper.md` into a PDF, applying the specified citation style and formatting. The generated PDF will be located at `build/paper.pdf`.
+   This will use Pandoc to convert `paper.md` into both a PDF and a DOCX document, applying the specified citation style and formatting. The generated files will be located in the `build/` directory:
+   - PDF: `build/paper.pdf`
+   - DOCX: `build/paper.docx`
 
 ### File Structure
 

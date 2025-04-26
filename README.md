@@ -6,7 +6,7 @@ Paperdown is a project designed to simplify the process of writing academic pape
 
 ## Features
 
-- **Markdown simplicity**: Write your paper in plain Markdown, making it easy to edit and version control.file.
+- **Markdown simplicity**: Write your paper in plain Markdown, making it easy to edit and version control.
 - **Cross-references and automatic numbering**: Automatically number and reference tables, figures, equations, and listings.
 - **Automatic section numbering**: Sections and subsections are numbered automatically (can be disabled in the metadata section of the `paper.md`).
 - **Bibliography generation**: Automatically generate a bibliography from the `references.bib` file (recommendation: use Zotero externally and export your bibliography to `references.bib` with the Better Bibtex plugin of Zotero). Supports citation styles via `.csl` files, such as `vancouver-brackets.csl`, which is specified in the `paper.md` metadata section.
@@ -49,11 +49,14 @@ Ensure you have the following installed:
    - PDF: `build/paper.pdf`
    - DOCX: `build/paper.docx`
 
+3. To control the fonts and styles used in the generated DOCX, edit the `reference.docx` file. This file serves as a template for the DOCX output.
+
 ### File Structure
 
 - `paper.md`: The main Markdown file for the paper.
 - `references.bib`: The bibliography file (exported from Zotero using Better BibTeX).
 - `citation-styles/`: Contains Citation Style Language (CSL) files for formatting references.
+- `reference.docx`: A template file used to define the fonts and styles for the DOCX output.
 - `environment.yml`: Specifies the Conda environment dependencies.
 
 ## Example Features

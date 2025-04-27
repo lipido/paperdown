@@ -42,6 +42,14 @@ procedure BubbleSort(A: list of items)
 end procedure
 ```
 
+```java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("hello!");
+    }
+}
+```
+
 \newpage
 ## Results
 

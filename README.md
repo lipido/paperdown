@@ -45,8 +45,9 @@ Ensure you have the following installed:
    make
    ```
 
-   This will use Pandoc to convert `paper.md` into both a PDF and a DOCX document, applying the specified citation style and formatting. The generated files will be located in the `build/` directory:
-   - PDF: `build/paper.pdf`
+   This will use Pandoc to convert `paper.md` into two PDF documents (one via LaTeX/Tectonic, another via HTML/WeasyPrint) and a DOCX document, applying the specified citation style and formatting. The generated files will be located in the `build/` directory:
+   - LaTeX-based PDF: `build/paper.latex.pdf`
+   - HTML-based PDF: `build/paper.html.pdf` (more customizable via CSS)
    - DOCX: `build/paper.docx`
 
 ### File Structure
@@ -55,6 +56,8 @@ Ensure you have the following installed:
 - `references.bib`: The bibliography file (exported from Zotero using Better BibTeX).
 - `citation-styles/`: Contains Citation Style Language (CSL) files for formatting references.
 - `environment.yml`: Specifies the Conda environment dependencies.
+- `pandoc-defaults/`: Contains YAML files with default Pandoc options for different output formats (e.g., `defaults.latexpdf.yaml`, `defaults.htmlpdf.yaml`, `defaults.docx.yaml`), reducing the need to modify the `Makefile`.
+- `template/`: Contains templates for customizing the output formats.
 
 ## Example Features
 
@@ -79,13 +82,15 @@ Sections, tables, figures, and listings are automatically numbered, ensuring con
 Add `\newpage` to create a page break in your markdown. Thanks to the [pagebreak lua filter](https://github.com/pandoc-ext/pagebreak), this LaTeX command is translated not only to PDF output, but also to another formats such as DOCX.
 
 ### Templates
-Pandoc uses a template engine to translate the markdown metadata content (at the start of the `paper.md`) to low level formats, in this case, OpenXML for DOCX and LaTeX for PDF (since tectonic pdf-engine is used, see the Makefile).
+Pandoc uses a template engine to translate the markdown metadata content (at the start of the `paper.md`) to low level formats. This project uses templates for LaTeX (via Tectonic for PDF), HTML (via WeasyPrint for PDF), and OpenXML (for DOCX).
 
 For convenience, we have dumped the default templates in the `template` subdir, in order to freely edit them to customize your output:
 
-- `template/pdf/pdflatex.pandoc-template`: controls how LaTeX content is generated from the Markdown meta-data contents.
-- `template/docx/docx.pandoc-template`: controls how OpenXML is generated from the Markdown meta-data contents.
-- `template/docx/styles.docx`: A DOCX to edit only customize the styles.
+- `template/pdf/pdflatex.pandoc-template`: controls how LaTeX content is generated from the Markdown meta-data contents for the LaTeX-based PDF.
+- `template/html/pdfhtml.pandoc-template`: controls how HTML content is generated for the HTML-based PDF.
+- `template/html/style.css`: CSS file to customize the appearance of the HTML-based PDF output. This offers more flexibility for styling compared to the LaTeX route.
+- `template/docx/docx.pandoc-template`: controls how OpenXML is generated from the Markdown meta-data contents for the DOCX output.
+- `template/docx/styles.docx`: A DOCX file used as a reference to define styles for the DOCX output. Edit this file to customize DOCX styles.
 
 ## Contributing
 

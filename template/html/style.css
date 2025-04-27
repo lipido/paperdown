@@ -1,0 +1,177 @@
+/*
+Here you can place your custom CSS for the pdf generated via html
+*/
+/* General body styling */
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Title block styling */
+#title-block-header {
+  text-align: center;
+  margin: 2em 0;
+  padding: 1em;
+}
+
+#title-block-header .title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+#title-block-header .subtitle {
+  font-size: 1.5em;
+  font-style: italic;
+  margin: 0.5em 0;
+}
+
+#title-block-header .author {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+#title-block-header .date {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+/* Abstract styling */
+.abstract {
+  margin: 2em auto;
+  padding: 1em;
+}
+
+.abstract-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+/* Table of contents styling */
+nav#TOC {
+  margin: 2em auto;
+  padding: 1em;
+  max-width: 800px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+nav#TOC h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #007acc;
+}
+
+nav#TOC ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav#TOC ul li {
+  margin: 0.5em 0;
+}
+
+nav#TOC ul li a {
+  text-decoration: none;
+  color: #007acc;
+}
+
+nav#TOC ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Paragraphs and headings */
+p {
+  margin: 1em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  margin: 1em 0 0.5em;
+}
+
+h1 {
+  font-size: 1.75em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+/* Lists */
+ul, ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+  text-align: left;
+}
+
+table th {
+    font-weight: bold;
+}
+
+
+/* Blockquotes */
+blockquote {
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #f9f9f9;
+  border-left: 6px solid #007acc;
+  font-style: italic;
+}
+
+/* Code blocks and inline code */
+pre, code {
+  font-family: "Courier New", monospace;
+  padding: 0.5em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+/* Footer content (if included) */
+.custom-before, .custom-after {
+  margin: 2em auto;
+  padding: 1em;
+  max-width: 800px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 1em 0;
+}

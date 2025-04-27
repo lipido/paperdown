@@ -8,6 +8,7 @@ abstract: |
   about formatting.
 author:
 - Daniel Glez-Peña
+- John Doe
 date: "2025-04-25"
 bibliography: references.bib
 csl: citation-styles/vancouver-brackets.csl  # (Citation Style Language file for formatting)

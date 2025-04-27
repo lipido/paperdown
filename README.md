@@ -49,14 +49,11 @@ Ensure you have the following installed:
    - PDF: `build/paper.pdf`
    - DOCX: `build/paper.docx`
 
-3. To control the fonts and styles used in the generated DOCX, edit the `reference.docx` file. This file serves as a template for the DOCX output.
-
 ### File Structure
 
 - `paper.md`: The main Markdown file for the paper.
 - `references.bib`: The bibliography file (exported from Zotero using Better BibTeX).
 - `citation-styles/`: Contains Citation Style Language (CSL) files for formatting references.
-- `reference.docx`: A template file used to define the fonts and styles for the DOCX output.
 - `environment.yml`: Specifies the Conda environment dependencies.
 
 ## Example Features
@@ -77,6 +74,18 @@ To cite a paper in the main text, use the following syntax:
 
 ### Automatic Numbering
 Sections, tables, figures, and listings are automatically numbered, ensuring consistency throughout the document.
+
+### Page breaks
+Add `\newpage` to create a page break in your markdown. Thanks to the [pagebreak lua filter](https://github.com/pandoc-ext/pagebreak), this LaTeX command is translated not only to PDF output, but also to another formats such as DOCX.
+
+### Templates
+Pandoc uses a template engine to translate the markdown metadata content (at the start of the `paper.md`) to low level formats, in this case, OpenXML for DOCX and LaTeX for PDF (since tectonic pdf-engine is used, see the Makefile).
+
+For convenience, we have dumped the default templates in the `template` subdir, in order to freely edit them to customize your output:
+
+- `template/pdf/pdflatex.pandoc-template`: controls how LaTeX content is generated from the Markdown meta-data contents.
+- `template/docx/docx.pandoc-template`: controls how OpenXML is generated from the Markdown meta-data contents.
+- `template/docx/styles.docx`: A DOCX to edit only customize the styles.
 
 ## Contributing
 

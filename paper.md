@@ -1,6 +1,7 @@
 ---
 title: "The Future of Writing Papers"
-author: "lipido"
+author:
+- Daniel Glez-Peña
 date: "2025-04-25"
 bibliography: references.bib
 csl: citation-styles/vancouver-brackets.csl  # (Citation Style Language file for formatting)
@@ -15,6 +16,8 @@ Write your abstract here. [@asgariContinuousDistributedRepresentation2015]
 ## Introduction
 
 Write your introduction here.
+
+
 
 ## Materials and methods
 
@@ -39,7 +42,7 @@ procedure BubbleSort(A: list of items)
 end procedure
 ```
 
-
+\newpage
 ## Results
 
 As shown in Table 1 (Summary of experimental results), the experimental results demonstrate significant improvements across all metrics.

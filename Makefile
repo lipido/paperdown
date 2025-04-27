@@ -7,18 +7,18 @@ all: build/paper.pdf build/paper.docx
 build/paper.pdf: paper.md
 	@mkdir -p build  # Ensure the target directory exists
 	@if grep -q "number-sections: true" paper.md; then \
-		pandoc paper.md --filter pandoc-crossref --citeproc -o build/paper.pdf --pdf-engine=tectonic --number-sections; \
+		pandoc paper.md --template=template/pdf/pdflatex.pandoc-template --lua-filter=lua-filters/pagebreak/pagebreak.lua --filter pandoc-crossref --citeproc -o build/paper.pdf --pdf-engine=tectonic --number-sections; \
 	else \
-		pandoc paper.md --filter pandoc-crossref --citeproc -o build/paper.pdf --pdf-engine=tectonic; \
+		pandoc paper.md --template=template/pdf/pdflatex.pandoc-template --lua-filter=lua-filters/pagebreak/pagebreak.lua --filter pandoc-crossref --citeproc -o build/paper.pdf --pdf-engine=tectonic; \
 	fi
 
 # Convert Markdown to DOCX using Pandoc
 build/paper.docx: paper.md
 	@mkdir -p build  # Ensure the target directory exists
 	@if grep -q "number-sections: true" paper.md; then \
-		pandoc paper.md --reference-doc=reference.docx --filter pandoc-crossref --citeproc -o build/paper.docx --number-sections; \
+		pandoc paper.md --template=template/docx/docx.pandoc-template --lua-filter=lua-filters/pagebreak/pagebreak.lua --reference-doc=template/docx/styles.docx --filter pandoc-crossref --citeproc -o build/paper.docx --number-sections; \
 	else \
-		pandoc paper.md --reference-doc=reference.docx --filter pandoc-crossref --citeproc -o build/paper.docx; \
+		pandoc paper.md --template=template/docx/docx.pandoc-template --lua-filter=lua-filters/pagebreak/pagebreak.lua --reference-doc=template/docx/styles.docx --filter pandoc-crossref --citeproc -o build/paper.docx; \
 	fi
 
 # Clean up generated files

@@ -57,7 +57,9 @@ As shown in Table 1 (Summary of experimental results), the experimental results 
 
 Tables [-@tbl:results] and [-@tbl:results2] summarize the outcomes.
 
+As Figure [-@fig:setup] shows...
 
+![Experimental setup and results visualization.](figures/figure1.png){#fig:setup}
 
 | Experiment | Metric A | Metric B | Metric C |
 |------------|----------|----------|----------|
@@ -74,9 +76,7 @@ Table: Results of the treatment experiment {#tbl:results}
 | Exp C      | 0.75     | 0.78     | 0.82     | 0.85     |
 Table: Results of the treatment experiment {#tbl:results2}
 
-As Figure [-@fig:setup] shows...
 
-![Experimental setup and results visualization.](figures/figure1.png){#fig:setup}
 
 
 # Conclusion

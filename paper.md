@@ -1,5 +1,11 @@
 ---
 title: "The Future of Writing Papers"
+abstract: |
+  Paperdown is a project designed to simplify the process of writing academic papers using Markdown.
+  It leverages Pandoc to convert Markdown files into high-quality PDFs and DOCX documents, while
+  supporting advanced features such as cross-references, automatic numbering, and bibliography
+  generation. This approach allows researchers to focus on content creation without worrying
+  about formatting.
 author:
 - Daniel Glez-Peña
 date: "2025-04-25"
@@ -7,19 +13,12 @@ bibliography: references.bib
 csl: citation-styles/vancouver-brackets.csl  # (Citation Style Language file for formatting)
 number-sections: true
 ---
-# The Future of Writing Papers
 
-## Abstract
+# Introduction
 
-Write your abstract here. [@asgariContinuousDistributedRepresentation2015]
+Write your introduction here [@asgariContinuousDistributedRepresentation2015].
 
-## Introduction
-
-Write your introduction here.
-
-
-
-## Materials and methods
+# Materials and methods
 
 The following equation [-@eq:fundamental] represents...
 
@@ -41,8 +40,9 @@ procedure BubbleSort(A: list of items)
     end for
 end procedure
 ```
+The following Listing [-@lst:javahelloworld] shows a small Java program.
 
-```java
+```java {#lst:javahelloworld caption="A Java Hello World program"}
 class HelloWorld {
     public static void main(String[] args) {
         System.out.println("hello!");
@@ -51,7 +51,7 @@ class HelloWorld {
 ```
 
 \newpage
-## Results
+# Results
 
 As shown in Table 1 (Summary of experimental results), the experimental results demonstrate significant improvements across all metrics.
 
@@ -79,9 +79,9 @@ As Figure [-@fig:setup] shows...
 ![Experimental setup and results visualization.](figures/figure1.png){#fig:setup}
 
 
-## Conclusion
+# Conclusion
 
 Write your conclusion here.
 
-## References
+# References
 <!-- pandoc will place the references at the end of the paper -->

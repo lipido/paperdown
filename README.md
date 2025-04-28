@@ -17,6 +17,7 @@ Paperdown is a project designed to simplify the process of writing academic pape
 
 Ensure you have the following installed:
 - [Conda](https://docs.conda.io/en/latest/)
+- Highly recommended: [CodeBraid Preview VSCode extension](https://marketplace.visualstudio.com/items?itemName=gpoore.codebraid-preview). This allows you to see a live preview of the markdown, using pandoc behind the scenes, so it can support the richer markdown syntax, as well as, cross references, bibliography, etc. The `.vscode/settings.json`, configures this extension in order to better integrate CodeBraid extension with this project, by using your HTML+PDF templates and CSS style!
 
 ### Setting Up the Environment
 
@@ -35,6 +36,14 @@ Ensure you have the following installed:
    ```bash
    conda activate paperdown
    ```
+
+4. Launch VSCode inside the environment, so it will not force you to install pandoc in your system:
+   ```bash
+   code .
+   ```
+
+#### Making CodeBraid Preview using your conda environment pandoc
+As it was mentioned earlier, in order to "force" CodeBraid extension to use the pandoc that comes with the conda environment, just activate the environment and launch `code .` in the terminal.
 
 ### Generating the PDF and DOCX
 

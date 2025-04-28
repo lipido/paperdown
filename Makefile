@@ -2,7 +2,6 @@
 
 # Variables
 PANDOC_COMMON_FLAGS = --lua-filter=lua-filters/pagebreak/pagebreak.lua --filter pandoc-crossref --citeproc
-NUMBER_SECTIONS_FLAG = $(shell if grep -q "number-sections: true" paper.md; then echo "--number-sections"; fi)
 MKDIR_BUILD = @mkdir -p build
 
 # Default target: build the PDF and DOCX
@@ -16,8 +15,7 @@ build/paper.latex.pdf: paper.md
 		--template=template/pdf/pdflatex.pandoc-template \
 		$(PANDOC_COMMON_FLAGS) \
 		-o $@ \
-		--pdf-engine=tectonic \
-		$(NUMBER_SECTIONS_FLAG)
+		--pdf-engine=tectonic
 
 # Convert Markdown to PDF using weasyprint
 build/paper.html.pdf: paper.md
@@ -28,8 +26,7 @@ build/paper.html.pdf: paper.md
 		--template=template/html/pdfhtml.pandoc-template \
 		$(PANDOC_COMMON_FLAGS) \
 		-o $@ \
-		--pdf-engine=weasyprint \
-		$(NUMBER_SECTIONS_FLAG)
+		--pdf-engine=weasyprint
 
 # Convert Markdown to DOCX using Pandoc
 build/paper.docx: paper.md
@@ -39,9 +36,7 @@ build/paper.docx: paper.md
 		--template=template/docx/docx.pandoc-template \
 		--reference-doc=template/docx/styles.docx \
 		$(PANDOC_COMMON_FLAGS) \
-		-o $@ \
-		$(NUMBER_SECTIONS_FLAG)
-
+		-o $@
 # Clean up generated files
 clean:
 	rm -f build/*

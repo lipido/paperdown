@@ -12,20 +12,19 @@ author:
 date: "2025-04-25"
 bibliography: references.bib
 csl: citation-styles/vancouver-brackets.csl  # (Citation Style Language file for formatting)
-number-sections: true
 ---
 
 # Introduction
 
-Write your introduction here [@asgariContinuousDistributedRepresentation2015].
+Write your introduction here [@acunerozbabacanTransientProteinProtein2011] [@asgariContinuousDistributedRepresentation2015].
 
 # Materials and methods
 
-The following equation [-@eq:fundamental] represents...
+The following formula [@eq:foundamental] represents...
 
 $$
 \int_{a}^{b} f(x) \, dx = F(b) - F(a)
-$$ {#eq:fundamental}
+$$ {#eq:foundamental}
 
 The pseudocode for the Bubble Sort algorithm is shown in Listing [-@lst:bubblesort]:
 
@@ -54,31 +53,37 @@ class HelloWorld {
 \newpage
 # Results
 
-As shown in Table 1 (Summary of experimental results), the experimental results demonstrate significant improvements across all metrics.
-
-Tables [-@tbl:results] and [-@tbl:results2] summarize the outcomes.
-
 As Figure [-@fig:setup] shows...
 
 ![Experimental setup and results visualization.](figures/figure1.png){#fig:setup}
 
-| Experiment | Metric A | Metric B | Metric C |
-|------------|----------|----------|----------|
-| Exp 1      | 0.85     | 0.78     | 0.92     |
-| Exp 2      | 0.88     | 0.81     | 0.95     |
-| Exp 3      | 0.90     | 0.85     | 0.97     |
-Table: Results of the treatment experiment {#tbl:results}
+The experimental results demonstrate significant improvements across all metrics.
+
+Table [-@tbl:earth] and Table [-@tbl:antarcticavsearth] summarize the measures.
+
++---------------------+----------+
+| Property            | Earth    |
++=============+=======+==========+
+|             | min   | -89.2 °C |
+| Temperature +-------+----------+
+| 1961-1990   | mean  | 14 °C    |
+|             +-------+----------+
+|             | max   | 56.7 °C  |
++-------------+-------+----------+
+Table: Temparatures in the earth from 1961 to 1990  {#tbl:earth}
 
 
-| Experiment | Metric W | Metric X | Metric Y | Metric Z |
-|------------|----------|----------|----------|----------|
-| Exp A      | 0.60     | 0.65     | 0.70     | 0.75     |
-| Exp B      | 0.68     | 0.72     | 0.78     | 0.80     |
-| Exp C      | 0.75     | 0.78     | 0.82     | 0.85     |
-Table: Results of the treatment experiment {#tbl:results2}
-
-
-
++---------------------+-----------------------+
+| Location            | Temperature 1961-1990 |
+|                     | in degree Celsius     |
+|                     +-------+-------+-------+
+|                     | min   | mean  | max   |
++=====================+=======+=======+=======+
+| Antarctica          | -89.2 | N/A   | 19.8  |
++---------------------+-------+-------+-------+
+| Earth               | -89.2 | 14    | 56.7  |
++---------------------+-------+-------+-------+
+Table: Temperatures Antartica vs Earth {#tbl:antarcticavsearth}
 
 # Conclusion
 

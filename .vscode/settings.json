@@ -1,0 +1,18 @@
+{
+    "codebraid.preview.pandoc.build": {
+        "*.md": {
+            "reader": "markdown",
+            "preview": {
+                "html": {
+                    "defaults": {},
+                    "options": ["--verbose", "--filter=pandoc-crossref", "--css=template/html/style.css", "--defaults=pandoc-defaults/defaults.htmlpdf.yaml","--template=template/html/pdfhtml.pandoc-template","--lua-filter=lua-filters/pagebreak/pagebreak.lua", "--citeproc"]
+                }
+            },
+            "export": {}
+        }
+    },
+    "codebraid.preview.css.useMarkdownPreviewFontSettings": false,
+    "codebraid.preview.css.useMarkdownPreviewStyles": false,
+    "codebraid.preview.css.useDefault": true,
+    "codebraid.preview.css.overrideDefault": true
+}

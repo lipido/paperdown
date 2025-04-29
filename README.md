@@ -104,6 +104,9 @@ You can take advantage of this extension, that allows you to see a more camera-r
 
 There is a current limitation: equations are not correctly numbered and cross-referenced in the live preview, since CodeBraid forces to use `katex` a formula engine, which do not support cross-referencing. Don't worry, the generated PDFs and DOCX work correctly.
 
+#### Knowing issues
+- Cross-references may occasionally fail. Renaming the cross-reference or rephrasing the table's caption and/or its identifier often resolves the issue. Avoid using the word "table" in the table's caption to minimize problems.
+
 ## Contributing
 
 Feel free to submit issues or pull requests to improve this project.

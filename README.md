@@ -8,16 +8,17 @@ Paperdown is a project designed to simplify the process of writing academic pape
 
 - **Markdown simplicity**: Write your paper in plain Markdown, making it easy to edit and version control.
 - **Cross-references and automatic numbering**: Automatically number and reference tables, figures, equations, and listings.
-- **Automatic section numbering**: Sections and subsections are numbered automatically (can be disabled in the metadata section of the `paper.md`).
-- **Bibliography generation**: Automatically generate a bibliography from the `references.bib` file (recommendation: use Zotero externally and export your bibliography to `references.bib` with the Better Bibtex plugin of Zotero). Supports citation styles via `.csl` files, such as `vancouver-brackets.csl`, which is specified in the `paper.md` metadata section.
+- **Automatic section numbering**: Sections and subsections are numbered automatically (can be disabled in the `paper.md` metadata).
+- **Bibliography generation**: Generate a bibliography automatically from the `references.bib` file. Use Zotero with the Better BibTeX plugin to export your bibliography. Citation styles (e.g., `vancouver-brackets.csl`) are specified in the `paper.md` metadata.
 
 ## Getting Started
 
 ### Prerequisites
 
-Ensure you have the following installed:
+Ensure the following are installed:
 - [Conda](https://docs.conda.io/en/latest/)
-- Highly recommended: [CodeBraid Preview VSCode extension](https://marketplace.visualstudio.com/items?itemName=gpoore.codebraid-preview). This allows you to see a live preview of the markdown, using pandoc behind the scenes, so it can support the richer markdown syntax, as well as, cross references, bibliography, etc. The `.vscode/settings.json`, configures this extension in order to better integrate CodeBraid extension with this project, by using your HTML+PDF templates and CSS style!
+- [CodeBraid Preview VSCode extension](https://marketplace.visualstudio.com/items?itemName=gpoore.codebraid-preview) (highly recommended): Provides a live preview of Markdown using Pandoc, supporting advanced features like cross-references and bibliographies. It is preconfigured (`.vscode/settings.json`) to integrate with your HTML+PDF templates and CSS styles (located in `template/html`).
+   - Note: you do not need to install Pandoc system-wide for this extension, you can reuse the Conda environment (see next section).
 
 ### Setting Up the Environment
 
@@ -37,13 +38,10 @@ Ensure you have the following installed:
    conda activate paperdown
    ```
 
-4. Launch VSCode inside the environment, so it will not force you to install pandoc in your system:
+4. If using the CodeBraid Preview extension, launch VSCode from the terminal **within the Conda environment** to avoid installing Pandoc system-wide, as the extension can invoke it directly:
    ```bash
    code .
    ```
-
-#### Making CodeBraid Preview using your conda environment pandoc
-As it was mentioned earlier, in order to "force" CodeBraid extension to use the pandoc that comes with the conda environment, just activate the environment and launch `code .` in the terminal.
 
 ### Generating the PDF and DOCX
 
@@ -100,6 +98,11 @@ For convenience, we have dumped the default templates in the `template` subdir, 
 - `template/html/style.css`: CSS file to customize the appearance of the HTML-based PDF output. This offers more flexibility for styling compared to the LaTeX route.
 - `template/docx/docx.pandoc-template`: controls how OpenXML is generated from the Markdown meta-data contents for the DOCX output.
 - `template/docx/styles.docx`: A DOCX file used as a reference to define styles for the DOCX output. Edit this file to customize DOCX styles.
+
+### Live preview with CodeBraid Preview
+You can take advantage of this extension, that allows you to see a more camera-ready version of the Markdown, as well as supporting all the features (cross-references, bibliography, etc).
+
+There is a current limitation: equations are not correctly numbered and cross-referenced in the live preview, since CodeBraid forces to use `katex` a formula engine, which do not support cross-referencing. Don't worry, the generated PDFs and DOCX work correctly.
 
 ## Contributing
 

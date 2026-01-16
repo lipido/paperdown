@@ -32,14 +32,18 @@ Ensure the following are installed:
    ```bash
    conda env create -f environment.yml
    ```
-
+   To update an existing environment:
+   ```bash
+   conda env update -f environment.yml
+   ```
+   
 3. Activate the environment:
    ```bash
    conda activate paperdown
    ```
 
 4. If using the CodeBraid Preview extension, launch VSCode from the terminal **within the Conda environment** to avoid installing Pandoc system-wide, as the extension can invoke it directly:
-   ```bash
+   ```bash   
    code .
    ```
 
